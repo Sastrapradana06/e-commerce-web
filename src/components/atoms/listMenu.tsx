@@ -13,10 +13,10 @@ const ListMenu: React.FC<ButtonProps> = ({ link, teks, icons1 }) => {
         <li>
           <Link
             href={link}
-            className="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group  text-white hover:bg-purple-300"
+            className="flex items-center w-full p-2 text-base  transition duration-75 rounded-lg group   hover:bg-purple-200 "
           >
             {icons1}
-            <span className="flex-1 ms-3 whitespace-nowrap capitalize">
+            <span className="flex-1 ms-3 whitespace-nowrap capitalize text-white lg:text-gray-700">
               {teks}
             </span>
           </Link>
@@ -24,7 +24,7 @@ const ListMenu: React.FC<ButtonProps> = ({ link, teks, icons1 }) => {
       ) : (
         <Link
           href={link}
-          className={`flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group  text-white hover:bg-purple-300 text-[.9rem]`}
+          className={`flex items-center w-full p-2  transition duration-75 rounded-lg pl-11 group   hover:text-purple-300 lg:hover:text-purple-600 text-[.9rem]`}
         >
           {teks}
         </Link>

@@ -1,20 +1,29 @@
 "use-client";
 
 interface ButtonProps {
-  teks: string;
+  teks?: string;
+  icons?: React.ReactNode;
   type: "submit" | "reset" | "button" | undefined;
   color: "purple" | "blue" | "red" | "green" | "yellow" | "dark" | "light";
   size: "small" | "medium" | "large";
   func?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({ teks, type, color, size, func }) => {
+const Button: React.FC<ButtonProps> = ({
+  teks,
+  icons,
+  type,
+  color,
+  size,
+  func,
+}) => {
   return (
     <button
-      className={`mt-4 w-max ${buttonColor[color]} ${buttonSize[size]}  duration-200 cursor-pointer`}
+      className={`w-max ${buttonColor[color]} ${buttonSize[size]}  duration-200 cursor-pointer flex items-center justify-center gap-2`}
       type={type}
       onClick={func}
     >
+      {icons}
       {teks}
     </button>
   );

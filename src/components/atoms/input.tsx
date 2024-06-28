@@ -3,6 +3,7 @@
 interface InputProps {
   name: string;
   type: "password" | "email" | "text" | undefined;
+  placeholder?: string;
   color: "transparent" | "white";
   size: "small" | "medium" | "large";
   value?: string;
@@ -12,6 +13,7 @@ interface InputProps {
 const Input: React.FC<InputProps> = ({
   name,
   type,
+  placeholder,
   color,
   size,
   value,
@@ -23,6 +25,7 @@ const Input: React.FC<InputProps> = ({
       name={name}
       value={value || ""}
       onChange={setValue}
+      placeholder={placeholder}
       required={true}
       className={`w-full border outline-none ${inputSize[size]} ${inputColor[color]}`}
     />
